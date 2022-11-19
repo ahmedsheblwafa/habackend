@@ -37,7 +37,7 @@ module.exports = {
             // const salt =await bcrypt.genSalt(8);
             // const hash =await bcrypt.hash(password, salt);
             console.log(req.body);
-            const video = await Video.create(req.body)
+            const video = await Video.create({...JSON.parse(req.body.data),thumbnail:req.body.thumbnail})
             res.send(video)
         } catch (error) {
             res.send(error.message)
