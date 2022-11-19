@@ -16,6 +16,7 @@ mongoose.connect('mongodb+srv://shebl:KPgn752Tgcfla0bz@cluster0.xoashpz.mongodb.
 
 app.use(express.json())
 app.use(cors())
+app.use('/images', express.static(__dirname + '/Images'))
 app.use("/videos",videosRouter)
 
 app.get("/",(req,res)=>{

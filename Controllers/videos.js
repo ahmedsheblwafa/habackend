@@ -1,4 +1,10 @@
 const Video = require('../Models/Videos') 
+const path = require('path')
+
+
+
+
+
 module.exports = {
     getAll:async(req,res)=>{
         try {
@@ -30,7 +36,9 @@ module.exports = {
             // let {password} = req.body
             // const salt =await bcrypt.genSalt(8);
             // const hash =await bcrypt.hash(password, salt);
+            console.log(req.body);
             const video = await Video.create(req.body)
+            upload.single('avatar')
             res.send(video)
         } catch (error) {
             res.send(error.message)
