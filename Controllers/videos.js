@@ -38,7 +38,6 @@ module.exports = {
             // const hash =await bcrypt.hash(password, salt);
             console.log(req.body);
             const video = await Video.create(req.body)
-            upload.single('avatar')
             res.send(video)
         } catch (error) {
             res.send(error.message)

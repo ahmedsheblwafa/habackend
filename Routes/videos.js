@@ -22,7 +22,7 @@ const upload = multer({ storage: storage })
 
 
 
-videosRouter.route('/').get(getAll).post(upload.single('pic'),createOne)
+videosRouter.route('/').get(getAll).post(upload.single('thumbnail'),createOne)
 videosRouter.route('/:id').get(getOne).delete(deleteOne).patch(updateOne)
 
 module.exports = {videosRouter}
